@@ -14,11 +14,11 @@ DATABASE = os.environ.get("DATABASE")
 
 
 db_conn = connections.Connection(
-    host='localhost',
-    port=3306,
-    user='root',
-    password='abc1234',
-    db='awsecs'
+    host=DBHOST,
+    port=DBPORT,
+    user=DBUSER,
+    password=DBPWD,
+    db=DATABASE
 )
 output = {}
 
@@ -55,4 +55,4 @@ def updatedatabase():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=80,debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)
